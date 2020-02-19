@@ -1,0 +1,13 @@
+apiVersion: skaffold/v2alpha3
+kind: Config
+build:
+  artifacts:
+    - image: django-test
+      context: django
+      # sync:
+      #   infer:
+      #   - 'src/**/*.js'
+deploy:
+  kubectl:
+    manifests:
+      - ./*/kubernetes/*.yml
