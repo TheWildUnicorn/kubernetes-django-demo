@@ -21,3 +21,15 @@ spec:
           env:
             - name: POSTGRES_HOST
               value: postgres-service
+      initContainers:
+        - name: init-db-check
+          image: django-test
+          env:
+            - name: POSTGRES_HOST
+              value: postgres-service
+          command:
+            - bash
+            - ./db-ready.sh
+        # - name: init-db-migrate
+        #   image: django-test
+        #   command: ["python3", "manage.py", "migrate"]
