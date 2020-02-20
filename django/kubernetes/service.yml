@@ -8,6 +8,6 @@ spec:
   ports:
     - port: 8000
       name: django
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: django

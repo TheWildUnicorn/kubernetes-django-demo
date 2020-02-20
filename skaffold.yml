@@ -11,8 +11,3 @@ deploy:
   kubectl:
     manifests:
       - ./*/kubernetes/*.yml
-# portForward:
-#   - resourceType: Service
-#     resourceName: django-service
-#     port: 8000
-#     localPort: 8000
